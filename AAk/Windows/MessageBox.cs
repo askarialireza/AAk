@@ -49,6 +49,35 @@ namespace AAk.Windows
         {
             return System.Windows.MessageBox.Show(messageBoxText: messageBoxText, caption: caption, button: button, icon: icon, defaultResult: defaultResult, options: options | System.Windows.MessageBoxOptions.RightAlign | System.Windows.MessageBoxOptions.RtlReading);
         }
-        
+
+        public static System.Windows.MessageBoxResult Show(System.Windows.Window owner, string messageBoxText)
+        {
+            return System.Windows.MessageBox.Show(owner: owner, messageBoxText: messageBoxText);
+        }
+
+        public static System.Windows.MessageBoxResult Show(System.Windows.Window owner, string messageBoxText, string caption)
+        {
+            return System.Windows.MessageBox.Show(owner: owner, messageBoxText: messageBoxText, caption: caption);
+        }
+
+        public static System.Windows.MessageBoxResult Show(System.Windows.Window owner, string messageBoxText, string caption, System.Windows.MessageBoxButton button)
+        {
+            return System.Windows.MessageBox.Show(owner: owner, messageBoxText: messageBoxText, caption: caption, button: button);
+        }
+
+        public static System.Windows.MessageBoxResult Show(System.Windows.Window owner, string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon)
+        {
+            return System.Windows.MessageBox.Show(owner: owner, messageBoxText: messageBoxText, caption: caption, button: button, icon: icon);
+        }
+
+        public static System.Windows.MessageBoxResult Show(System.Windows.Window owner, string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon, System.Windows.MessageBoxResult defaultResult)
+        {
+            return System.Windows.MessageBox.Show(owner: owner, messageBoxText: messageBoxText, caption: caption, button: button, icon: icon, defaultResult: defaultResult, options: System.Windows.MessageBoxOptions.RightAlign | System.Windows.MessageBoxOptions.RtlReading);
+        }
+
+        public static System.Windows.MessageBoxResult Show(System.Windows.Window owner, string messageBoxText, string caption, System.Windows.MessageBoxButton button, System.Windows.MessageBoxImage icon, System.Windows.MessageBoxResult defaultResult, System.Windows.MessageBoxOptions options)
+        {
+            return System.Windows.MessageBox.Show(owner: owner, messageBoxText: messageBoxText, caption: caption, button: button, icon: icon, defaultResult: defaultResult, options: options | System.Windows.MessageBoxOptions.RightAlign | System.Windows.MessageBoxOptions.RtlReading);
+        }
     }
 }

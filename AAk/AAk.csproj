@@ -45,16 +45,77 @@
     <Compile Include="Data\Converters\DateTimeToShortPersianDateStringConverter.cs" />
     <Compile Include="Data\Converters\IsAdminBooleanToStringConverter.cs" />
     <Compile Include="Data\Converters\LongToRialStringFormatConverter.cs" />
+    <Compile Include="FarsiLibrary\Localization\ARLocalizer.cs" />
+    <Compile Include="FarsiLibrary\Localization\AssemblyNames.cs" />
+    <Compile Include="FarsiLibrary\Localization\BaseLocalizer.cs" />
+    <Compile Include="FarsiLibrary\Localization\ENLocalizer.cs" />
+    <Compile Include="FarsiLibrary\Localization\FALocalizeManager.cs" />
+    <Compile Include="FarsiLibrary\Localization\FALocalizer.cs" />
+    <Compile Include="FarsiLibrary\Localization\FormatterStringID.cs" />
+    <Compile Include="FarsiLibrary\Localization\StringID.cs" />
+    <Compile Include="FarsiLibrary\Utils\CultureManager.cs" />
+    <Compile Include="FarsiLibrary\Utils\DateTimeExtensions.cs" />
+    <Compile Include="FarsiLibrary\Utils\Exceptions\InvalidPersianDateException.cs" />
+    <Compile Include="FarsiLibrary\Utils\Exceptions\InvalidPersianDateFormatException.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\AbstractTimeUnit.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\BasicTimeFormat.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\Duration.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\ITimeFormat.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\ITimeUnit.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\PrettyTime.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Century.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Day.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Decade.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Hour.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\JustNow.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Millennium.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Millisecond.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Minute.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Month.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Second.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Week.cs" />
+    <Compile Include="FarsiLibrary\Utils\Formatter\TimeUnits\Year.cs" />
+    <Compile Include="FarsiLibrary\Utils\Internals\CollectionHelper.cs" />
+    <Compile Include="FarsiLibrary\Utils\Internals\CultureHelper.cs" />
+    <Compile Include="FarsiLibrary\Utils\Internals\Guard.cs" />
+    <Compile Include="FarsiLibrary\Utils\Internals\ReflectionHelper.cs" />
+    <Compile Include="FarsiLibrary\Utils\Internals\ThemeWrapper.cs" />
+    <Compile Include="FarsiLibrary\Utils\Internals\Utils.cs" />
+    <Compile Include="FarsiLibrary\Utils\PersianCalendar.cs" />
+    <Compile Include="FarsiLibrary\Utils\PersianCultureInfo.cs" />
+    <Compile Include="FarsiLibrary\Utils\PersianDateTimeFormatInfo.cs" />
+    <Compile Include="FarsiLibrary\Utils\PersianMonthNames.cs" />
+    <Compile Include="FarsiLibrary\Utils\PersianWeekDayNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Text\MessageBox\Button.cs" />
+    <Compile Include="Text\MessageBox\Caption.cs" />
     <Compile Include="Text\RegularExpressions\Patterns.cs" />
     <Compile Include="Utils\MessageBox\ButtonManager.cs" />
     <Compile Include="Utils\PersianDate.cs" />
+    <Compile Include="Utils\PersianDateConverter.cs" />
+    <Compile Include="Utils\ToEnglish.cs" />
+    <Compile Include="Utils\ToFarsi.cs" />
+    <Compile Include="Utils\ToWords.cs" />
+    <Compile Include="Windows\Controls\Captcha.xaml.cs">
+      <DependentUpon>Captcha.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Controls\TextBox.cs" />
     <Compile Include="Windows\Forms\MessageBox.cs" />
     <Compile Include="Windows\MessageBox.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FarsiLibrary\" />
-    <Folder Include="Windows\Controls\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Windows\Controls\Captcha.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Icons\Refresh.png" />
+    <Content Include="Resources\Icons\Speaker.png" />
+    <Content Include="Resources\Images\CaptchaBack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

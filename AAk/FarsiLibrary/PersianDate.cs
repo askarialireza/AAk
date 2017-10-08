@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.ComponentModel;
-using AAk.FarsiLibrary.Utils;
-using AAk.FarsiLibrary.Utils.Exceptions;
+using FarsiLibrary.Utils.Exceptions;
 using System.Collections.Generic;
-using AAk.FarsiLibrary.Utils.Internals;
-using AAk.FarsiLibrary.Localization;
+using FarsiLibrary.Utils.Internals;
+using System.Globalization;
+using FarsiLibrary.Localization;
 
-
-namespace AAk.Utils
+namespace FarsiLibrary.Utils
 {
     /// <summary>
     /// PersianDate class to work with dates in Jalali calendar transparently.
@@ -49,7 +48,7 @@ namespace AAk.Utils
         private int second;
         private int millisecond;
         private readonly TimeSpan time;
-        private static readonly System.Globalization.PersianCalendar pc;
+        private static readonly PersianCalendar pc;
 
         [NonSerialized]
         public static DateTime MinValue;
@@ -68,7 +67,7 @@ namespace AAk.Utils
         {
             MinValue = new DateTime(196037280000000000L); // 12:00:00.000 AM, 22/03/0622
             MaxValue = DateTime.MaxValue;
-            pc = new System.Globalization.PersianCalendar();
+            pc = new PersianCalendar();
         }
 
         #endregion
@@ -525,7 +524,7 @@ namespace AAk.Utils
             {
                 try
                 {
-                    DateTime dt = DateTime.Parse(value, CultureHelper.PersianCulture, System.Globalization.DateTimeStyles.None);
+                    DateTime dt = DateTime.Parse(value, CultureHelper.PersianCulture, DateTimeStyles.None);
 
                     var year = pc.GetYear(dt);
                     var month = pc.GetMonth(dt);
