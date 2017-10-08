@@ -34,6 +34,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
@@ -45,6 +46,7 @@
     <Compile Include="Data\Converters\DateTimeToShortPersianDateStringConverter.cs" />
     <Compile Include="Data\Converters\IsAdminBooleanToStringConverter.cs" />
     <Compile Include="Data\Converters\LongToRialStringFormatConverter.cs" />
+    <Compile Include="Extensions\PersianCalendar.cs" />
     <Compile Include="FarsiLibrary\Localization\ARLocalizer.cs" />
     <Compile Include="FarsiLibrary\Localization\AssemblyNames.cs" />
     <Compile Include="FarsiLibrary\Localization\BaseLocalizer.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="FarsiLibrary\Utils\PersianMonthNames.cs" />
     <Compile Include="FarsiLibrary\Utils\PersianWeekDayNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Hashing.cs" />
     <Compile Include="Text\MessageBox\Button.cs" />
     <Compile Include="Text\MessageBox\Caption.cs" />
     <Compile Include="Text\RegularExpressions\Patterns.cs" />
@@ -99,23 +102,37 @@
     <Compile Include="Windows\Controls\Captcha.xaml.cs">
       <DependentUpon>Captcha.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Controls\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Controls\MonthView.xaml.cs">
+      <DependentUpon>MonthView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Controls\TextBox.cs" />
     <Compile Include="Windows\Forms\MessageBox.cs" />
     <Compile Include="Windows\MessageBox.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Security\" />
+    <Resource Include="Resources\Icons\Expand Arrow_52px.png" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Windows\Controls\Captcha.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\Controls\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Controls\MonthView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Icons\Refresh.png" />
-    <Content Include="Resources\Icons\Speaker.png" />
-    <Content Include="Resources\Images\CaptchaBack.png" />
+    <Resource Include="Resources\Icons\Refresh.png" />
+    <Resource Include="Resources\Icons\Speaker.png" />
+    <Resource Include="Resources\Images\CaptchaBack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

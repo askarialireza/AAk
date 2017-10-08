@@ -1,5 +1,5 @@
 ﻿
-namespace AAk.Controls
+namespace AAk.Windows.Controls
 {
     public partial class Captcha : System.Windows.Controls.UserControl
     {

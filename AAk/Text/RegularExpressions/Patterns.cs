@@ -38,7 +38,7 @@ namespace AAk.Text.RegularExpressions
 
         public const string Password = @"[a-zA-Z0-9_]{8,40}";
 
-        public const string Username = @"[a-zA-Z0-9_]{6,20}";
+        public const string Username = @"[a-zA-Z0-9_]{3,20}";
 
         public const string FileName = @"[a-zA-Z0-9_]{1,100}";
 

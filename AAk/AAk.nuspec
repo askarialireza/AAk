@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AAk</id>
+    <version>1.0.3</version>
+    <title>AAk</title>
+    <authors>Alireza Askari</authors>
+    <owners>Alireza Askari</owners>
+    <licenseUrl>https://opensource.org/licenses/MS-PL</licenseUrl>
+    <projectUrl>https://github.com/askarialireza/AAk</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AAk Library - Useful Library for Persian C# Developers</description>
+    <releaseNotes>Added PersianDatePicker and PersianMonthView Controls</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>PersianMessageBox Persian</tags>
+  </metadata>
+</package>

@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace AAk.Controls
+namespace AAk.Windows.Controls
 {
     public class TextBox : System.Windows.Controls.TextBox
     {
