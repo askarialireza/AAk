@@ -17,9 +17,11 @@ namespace AAk.Windows.Controls
         public static readonly System.Windows.RoutedEvent SelectedDateTimeChangedEvent =
             System.Windows.EventManager.RegisterRoutedEvent("SelectedDateTimeChanged", System.Windows.RoutingStrategy.Direct, typeof(System.Windows.RoutedEventHandler), typeof(MonthView));
 
+        public static readonly System.Windows.RoutedEvent DoubleClickEvent =
+            System.Windows.EventManager.RegisterRoutedEvent("DoubleClick", System.Windows.RoutingStrategy.Direct, typeof(System.Windows.RoutedEventHandler), typeof(MonthView));
+
         public static readonly System.Windows.DependencyProperty SelectedDateTimeProperty =
             System.Windows.DependencyProperty.Register("SelectedDateTime", typeof(AAk.Utils.PersianDate), typeof(MonthView));
-
 
         public event System.Windows.RoutedEventHandler SelectedDateTimeChanged
         {
@@ -28,7 +30,21 @@ namespace AAk.Windows.Controls
             remove { RemoveHandler(SelectedDateTimeChangedEvent, value); }
         }
 
-        void RaiseSelectedDateTimeChangedEvent()
+        public event System.Windows.RoutedEventHandler DoubleClick
+        {
+            add { AddHandler(DoubleClickEvent, value); }
+
+            remove { RemoveHandler(DoubleClickEvent, value); }
+        }
+
+        private void RaiseMouseDoubleClickEvent()
+        {
+            System.Windows.RoutedEventArgs oRoutedEventArgs = new System.Windows.RoutedEventArgs(DoubleClickEvent);
+
+            RaiseEvent(oRoutedEventArgs);
+        }
+
+        private void RaiseSelectedDateTimeChangedEvent()
         {
             System.Windows.RoutedEventArgs oRoutedEventArgs = new System.Windows.RoutedEventArgs(SelectedDateTimeChangedEvent);
 
@@ -85,11 +101,13 @@ namespace AAk.Windows.Controls
 
             SelectedDateTime = AAk.Utils.PersianDate.Now;
 
-            this.currentYear = SelectedDateTime.Year;
-            this.currentMonth = SelectedDateTime.Month;
-            this.currentDay = SelectedDateTime.Day;
+            currentYear = SelectedDateTime.Year;
+            currentMonth = SelectedDateTime.Month;
+            currentDay = SelectedDateTime.Day;
 
             CalculateMonth(currentYear, currentMonth);
+
+            RaiseSelectedDateTimeChangedEvent();
         }
 
         #endregion
@@ -365,6 +383,11 @@ namespace AAk.Windows.Controls
             SelectedDateTime = new AAk.Utils.PersianDate(yearPersian, monthPersian, dayPersian);
 
             RaiseSelectedDateTimeChangedEvent();
+
+            if (e.ClickCount == 2)
+            {
+                RaiseMouseDoubleClickEvent();
+            }
         }
 
         private void Grid_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -399,8 +422,7 @@ namespace AAk.Windows.Controls
             System.Windows.Controls.TextBlock LeavedTextBlock = TextBlocks.ElementAt(Index);
 
             if ((LeavedRectangle.Style == FindResource("RectangleStyleNone") && LeavedTextBlock.Style == FindResource("TextBlockStyleForOtherMonths")) ||
-                LeavedRectangle.Style == FindResource("RectangleStyleToday") ||
-                LeavedRectangle.Style == FindResource("RectangleStyleEventedDay"))
+                LeavedRectangle.Style == FindResource("RectangleStyleToday"))
                 return;
 
             LeavedRectangle.Style = (System.Windows.Style)FindResource("RectangleStyleNone");
@@ -536,6 +558,4 @@ namespace AAk.Windows.Controls
             CalculateMonth(persianDate.Year, persianDate.Month);
         }
     }
-
-
 }

@@ -6,7 +6,7 @@ namespace AAk.Extensions
         /// <summary>
         /// متدی برای تبدیل اعداد انگلیسی به فارسی
         /// </summary>
-        public static string ConvertToPersianNumber(this int input)
+        internal static string ConvertToPersianNumber(this int input)
         {
             //۰ ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹
             string temp = input.ToString();
@@ -28,7 +28,7 @@ namespace AAk.Extensions
         /// <summary>
         /// تبدیل اعداد فارسی به معادلش به صورت عدد integer
         /// </summary>
-        public static int ConvertToInteger(this string input)
+        internal static int ConvertToInteger(this string input)
         {
             input = System.Text.RegularExpressions.Regex.Replace(input, "۰", "0");
             input = System.Text.RegularExpressions.Regex.Replace(input, "۱", "1");
@@ -49,7 +49,7 @@ namespace AAk.Extensions
         /// <summary>
         /// تبدیل نام روزهای هفته میلادی به شمسی
         /// </summary>
-        public static string ConvertToPersianDay(this string input)
+        internal static string ConvertToPersianDay(this string input)
         {
             switch (input)
             {
@@ -80,7 +80,7 @@ namespace AAk.Extensions
         /// <summary>
         /// تبدیل عدد ماه به معادل نام ماه شمسی
         /// </summary>
-        public static string ConvertToPersianMonth(this int input)
+        internal static string ConvertToPersianMonth(this int input)
         {
             string FarsiMonthName = "هیچ کدام";
             //تعیین نام ماه شمسی  
@@ -153,7 +153,7 @@ namespace AAk.Extensions
         /// <summary>
         /// تبدیل عدد ماه به معادل نام ماه قمری
         /// </summary>
-        public static string ConvertToHigriMonth(this int input)
+        internal static string ConvertToHigriMonth(this int input)
         {
             string higriMonthName = "هیچ کدام";
             //تعیین نام ماه هجری قمری  

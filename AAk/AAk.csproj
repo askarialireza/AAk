@@ -46,6 +46,7 @@
     <Compile Include="Data\Converters\DateTimeToShortPersianDateStringConverter.cs" />
     <Compile Include="Data\Converters\IsAdminBooleanToStringConverter.cs" />
     <Compile Include="Data\Converters\LongToRialStringFormatConverter.cs" />
+    <Compile Include="Data\MonthView\Calculation.cs" />
     <Compile Include="Extensions\PersianCalendar.cs" />
     <Compile Include="FarsiLibrary\Localization\ARLocalizer.cs" />
     <Compile Include="FarsiLibrary\Localization\AssemblyNames.cs" />

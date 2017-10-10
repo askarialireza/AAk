@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace AAk.Windows.Controls
@@ -34,7 +33,7 @@ namespace AAk.Windows.Controls
             None = 0,
             EmailAddress = 1,
             IranMobileNumber = 2,
-            ShamsiDate =3,
+            ShamsiDate = 3,
             Username = 4,
             PercentValue = 5,
             NationalCode = 6,
@@ -226,7 +225,7 @@ namespace AAk.Windows.Controls
                         {
                             this.Text = this.Text.Replace(" ریال", string.Empty).Replace(",", string.Empty);
 
-                            if(Text == "0")
+                            if (Text == "0")
                             {
                                 Text = string.Empty;
                             }
@@ -313,7 +312,7 @@ namespace AAk.Windows.Controls
 
             if (MaskType == MaskTypeEnum.Regex)
             {
-                if(string.IsNullOrWhiteSpace(Text)==false)
+                if (string.IsNullOrWhiteSpace(Text) == false)
                 {
                     switch (RegEx)
                     {
@@ -326,7 +325,14 @@ namespace AAk.Windows.Controls
                                 {
                                     InvalidMaskError = "پست الکترونیکی نامعتبر می‌باشد.";
 
-                                    AAk.Windows.MessageBox.Show(caption: AAk.Text.MessageBox.Caption.Error, messageBoxText: InvalidMaskError, button: MessageBoxButton.OK, icon: MessageBoxImage.Error,defaultResult: MessageBoxResult.OK);
+                                    AAk.Windows.MessageBox.Show
+                                        (
+                                            caption: AAk.Text.MessageBox.Caption.Error,
+                                            messageBoxText: InvalidMaskError,
+                                            button: System.Windows.MessageBoxButton.OK,
+                                            icon: System.Windows.MessageBoxImage.Error,
+                                            defaultResult: System.Windows.MessageBoxResult.OK
+                                        );
 
                                     e.Handled = true;
                                 }
@@ -342,7 +348,14 @@ namespace AAk.Windows.Controls
                                 {
                                     InvalidMaskError = "شماره تلفن همراه نامعتبر می‌باشد.";
 
-                                    AAk.Windows.MessageBox.Show(caption:  AAk.Text.MessageBox.Caption.Error, messageBoxText: InvalidMaskError, button: MessageBoxButton.OK, icon: MessageBoxImage.Error,defaultResult: MessageBoxResult.OK);
+                                    AAk.Windows.MessageBox.Show
+                                        (
+                                            caption: AAk.Text.MessageBox.Caption.Error,
+                                            messageBoxText: InvalidMaskError,
+                                            button: System.Windows.MessageBoxButton.OK,
+                                            icon: System.Windows.MessageBoxImage.Error,
+                                            defaultResult: System.Windows.MessageBoxResult.OK
+                                        );
 
                                     e.Handled = true;
                                 }
@@ -358,7 +371,14 @@ namespace AAk.Windows.Controls
                                 {
                                     InvalidMaskError = "نام کاربری باید شامل حداقل 6 کاراکتر و حداکثر 20 کاراکتر و فقط می‌تواند شامل حروف لاتین، اعداد و _ باشد.";
 
-                                    AAk.Windows.MessageBox.Show(caption:  AAk.Text.MessageBox.Caption.Error, messageBoxText: InvalidMaskError, button: MessageBoxButton.OK, icon: MessageBoxImage.Error,defaultResult: MessageBoxResult.OK);
+                                    AAk.Windows.MessageBox.Show
+                                        (
+                                            caption: AAk.Text.MessageBox.Caption.Error,
+                                            messageBoxText: InvalidMaskError,
+                                            button: System.Windows.MessageBoxButton.OK,
+                                            icon: System.Windows.MessageBoxImage.Error,
+                                            defaultResult: System.Windows.MessageBoxResult.OK
+                                        );
 
                                     e.Handled = true;
                                 }
@@ -374,7 +394,14 @@ namespace AAk.Windows.Controls
                                 {
                                     InvalidMaskError = "تاریخ درج شده نامعتبر می‌باشد.";
 
-                                    AAk.Windows.MessageBox.Show(caption:  AAk.Text.MessageBox.Caption.Error, messageBoxText: InvalidMaskError, button: MessageBoxButton.OK, icon: MessageBoxImage.Error,defaultResult: MessageBoxResult.OK);
+                                    AAk.Windows.MessageBox.Show
+                                        (
+                                            caption: AAk.Text.MessageBox.Caption.Error,
+                                            messageBoxText: InvalidMaskError,
+                                            button: System.Windows.MessageBoxButton.OK,
+                                            icon: System.Windows.MessageBoxImage.Error,
+                                            defaultResult: System.Windows.MessageBoxResult.OK
+                                        );
 
                                     e.Handled = true;
                                 }
@@ -390,7 +417,14 @@ namespace AAk.Windows.Controls
                                 {
                                     InvalidMaskError = "مقدار درصد باید عددی بین 0 تا 100 باشد.";
 
-                                    AAk.Windows.MessageBox.Show(caption:  AAk.Text.MessageBox.Caption.Error, messageBoxText: InvalidMaskError, button: MessageBoxButton.OK, icon: MessageBoxImage.Error,defaultResult: MessageBoxResult.OK);
+                                    AAk.Windows.MessageBox.Show
+                                        (
+                                            caption: AAk.Text.MessageBox.Caption.Error,
+                                            messageBoxText: InvalidMaskError,
+                                            button: System.Windows.MessageBoxButton.OK,
+                                            icon: System.Windows.MessageBoxImage.Error,
+                                            defaultResult: System.Windows.MessageBoxResult.OK
+                                        );
 
                                     e.Handled = true;
                                 }
@@ -406,7 +440,14 @@ namespace AAk.Windows.Controls
                                 {
                                     InvalidMaskError = "کد ملی بایست عددی 10 رقمی باشد.";
 
-                                    AAk.Windows.MessageBox.Show(caption:  AAk.Text.MessageBox.Caption.Error, messageBoxText: InvalidMaskError, button: MessageBoxButton.OK, icon: MessageBoxImage.Error,defaultResult: MessageBoxResult.OK);
+                                    AAk.Windows.MessageBox.Show
+                                        (
+                                            caption: AAk.Text.MessageBox.Caption.Error,
+                                            messageBoxText: InvalidMaskError,
+                                            button: System.Windows.MessageBoxButton.OK,
+                                            icon: System.Windows.MessageBoxImage.Error,
+                                            defaultResult: System.Windows.MessageBoxResult.OK
+                                        );
 
                                     e.Handled = true;
                                 }
@@ -422,7 +463,14 @@ namespace AAk.Windows.Controls
 
                                     if (oRegex.IsMatch(Text) == false)
                                     {
-                                        AAk.Windows.MessageBox.Show(caption:  AAk.Text.MessageBox.Caption.Error, messageBoxText: InvalidMaskError, button: MessageBoxButton.OK, icon: MessageBoxImage.Error,defaultResult: MessageBoxResult.OK);
+                                        AAk.Windows.MessageBox.Show
+                                            (
+                                                caption: AAk.Text.MessageBox.Caption.Error,
+                                                messageBoxText: InvalidMaskError,
+                                                button: System.Windows.MessageBoxButton.OK,
+                                                icon: System.Windows.MessageBoxImage.Error,
+                                                defaultResult: System.Windows.MessageBoxResult.OK
+                                            );
 
                                         e.Handled = true;
                                     }
@@ -444,7 +492,7 @@ namespace AAk.Windows.Controls
             base.OnTemplateChanged(oldTemplate, newTemplate);
         }
 
-        protected override void OnDragLeave(DragEventArgs e)
+        protected override void OnDragLeave(System.Windows.DragEventArgs e)
         {
             base.OnDragLeave(e);
         }
@@ -454,17 +502,17 @@ namespace AAk.Windows.Controls
             base.OnTextChanged(e);
         }
 
-        protected override void OnDragOver(DragEventArgs e)
+        protected override void OnDragOver(System.Windows.DragEventArgs e)
         {
             base.OnDragOver(e);
         }
 
-        protected override void OnDragEnter(DragEventArgs e)
+        protected override void OnDragEnter(System.Windows.DragEventArgs e)
         {
             base.OnDragEnter(e);
         }
 
-        protected override void OnDrop(DragEventArgs e)
+        protected override void OnDrop(System.Windows.DragEventArgs e)
         {
             base.OnDrop(e);
         }

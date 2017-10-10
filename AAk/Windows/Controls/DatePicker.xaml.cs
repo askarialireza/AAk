@@ -1,15 +1,53 @@
 ﻿
-using System.Windows;
-
 namespace AAk.Windows.Controls
 {
     public partial class DatePicker : System.Windows.Controls.UserControl
     {
-        public AAk.Utils.PersianDate SelectedPersianDateTime { get; set; }
+        public static readonly System.Windows.DependencyProperty SelectedPersianDateTimeProperty =
+            System.Windows.DependencyProperty.Register("SelectedPerisanDateTime", typeof(AAk.Utils.PersianDate), typeof(DatePicker));
 
-        public System.DateTime SelectedDateTime { get; set; }
+        public static readonly System.Windows.DependencyProperty SelectedDateTimeProperty =
+            System.Windows.DependencyProperty.Register("SelectedDateTime", typeof(System.DateTime), typeof(DatePicker));
 
-        public string Text { get; set; }
+        public static readonly System.Windows.DependencyProperty TextProperty =
+            System.Windows.DependencyProperty.Register("Text", typeof(string), typeof(DatePicker));
+
+        public string Text
+        {
+            get
+            {
+                return (string)base.GetValue(TextProperty);
+            }
+            set
+            {
+                base.SetValue(TextProperty, value);
+            }
+        }
+
+
+        public AAk.Utils.PersianDate SelectedPersianDateTime
+        {
+            get
+            {
+                return (AAk.Utils.PersianDate)base.GetValue(SelectedPersianDateTimeProperty);
+            }
+            set
+            {
+                base.SetValue(SelectedPersianDateTimeProperty, value);
+            }
+        }
+
+        public System.DateTime SelectedDateTime
+        {
+            get
+            {
+                return (System.DateTime)base.GetValue(SelectedDateTimeProperty);
+            }
+            set
+            {
+                base.SetValue(SelectedDateTimeProperty, value);
+            }
+        }
 
         public DatePicker()
         {
@@ -40,9 +78,9 @@ namespace AAk.Windows.Controls
             {
                 AAk.Utils.PersianDate oPersianDate = new AAk.Utils.PersianDate(PersianDateTextBox.Text);
 
-                DatePickerPopupCalendar.SelectedDateTime = oPersianDate;
+                MonthView.SelectedDateTime = oPersianDate;
 
-                DatePickerPopupCalendar.GoToDate(oPersianDate);
+                MonthView.GoToDate(oPersianDate);
 
                 SelectedDateTime = AAk.Utils.PersianDateConverter.ToGregorianDateTime(oPersianDate);
 
@@ -52,7 +90,7 @@ namespace AAk.Windows.Controls
             }
             else
             {
-                DatePickerPopupCalendar.GoToDate(SelectedPersianDateTime);
+                MonthView.GoToDate(SelectedPersianDateTime);
 
                 SelectedDateTime = AAk.Utils.PersianDateConverter.ToGregorianDateTime(AAk.Utils.PersianDate.Today);
 
@@ -62,17 +100,20 @@ namespace AAk.Windows.Controls
             Text = PersianDateTextBox.Text;
         }
 
-        private void DatePickerPopupCalendar_SelectedDateTimeChanged_1(object sender, RoutedEventArgs e)
+        private void MonthView_SelectedDateTimeChanged(object sender, System.Windows.RoutedEventArgs e)
         {
-            PersianDateTextBox.Text = DatePickerPopupCalendar.SelectedDateTime.ToString("d");
-
-            DatePickerPopup.IsOpen = false;
+            PersianDateTextBox.Text = MonthView.SelectedDateTime.ToString("d");
 
             Text = PersianDateTextBox.Text;
 
-            SelectedDateTime = AAk.Utils.PersianDateConverter.ToGregorianDateTime(DatePickerPopupCalendar.SelectedDateTime);
+            SelectedDateTime = AAk.Utils.PersianDateConverter.ToGregorianDateTime(MonthView.SelectedDateTime);
 
-            SelectedPersianDateTime = DatePickerPopupCalendar.SelectedDateTime;
+            SelectedPersianDateTime = MonthView.SelectedDateTime;
+        }
+
+        private void MonthView_DoubleClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            DatePickerPopup.IsOpen = false;
         }
     }
 }

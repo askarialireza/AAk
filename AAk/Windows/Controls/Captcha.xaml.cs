@@ -8,7 +8,6 @@ namespace AAk.Windows.Controls
 
         public static readonly System.Windows.RoutedEvent CaptchaRefreshedEvent = System.Windows.EventManager.RegisterRoutedEvent("CaptchaRefreshed", System.Windows.RoutingStrategy.Bubble, typeof(System.Windows.RoutedEventHandler), typeof(Captcha));
 
-
         public string CaptchaValue
         {
             get
